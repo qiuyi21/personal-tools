@@ -232,7 +232,7 @@ rm -f /tmp/node.patch
 source /opt/rh/devtoolset-11/enable
 
 echo "Building node-$NODE_VERSION"
-python3 configure.py --verbose --enable-static --disable-shared --with-intl=small-icu
+python3 configure.py --verbose --enable-static --disable-shared --enable-lto --with-intl=full-icu --download=all
 make -j8
 
 cd ..
